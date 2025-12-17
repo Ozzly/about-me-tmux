@@ -4,7 +4,7 @@ import Window from "./components/Window";
 
 function App() {
   return (
-    <div className="h-screen flex flex-col mocha">
+    <div className="h-screen flex flex-col">
       <div className="p-2 flex-1 overflow-hidden">
         <Window />
       </div>
