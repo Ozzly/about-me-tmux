@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import usePopupStore from "../stores/popupStore";
 
 function Popup() {
@@ -15,7 +15,7 @@ function Popup() {
     };
     window.addEventListener("keydown", handleExit);
     return () => window.removeEventListener("keydown", handleExit);
-  }, []);
+  }, [toggleHelpPopup]);
   return (
     <div className="absolute justify-center items-center flex w-full h-full bg-ctp-base/50">
       <div className="bg-ctp-mantle w-lg h-128 border-ctp-mauve border-3 rounded-lg shadow-lg p-3 flex flex-col">
