@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import WindowButton from "./WindowButton";
 import dayjs from "dayjs";
 import useWindowStore from "../stores/windowStore";
+import usePopupStore from "../stores/popupStore";
 
 function BottomBar() {
   const windows = useWindowStore((state) => state.windows);
@@ -20,6 +21,9 @@ function BottomBar() {
   const activeWindowId = useWindowStore((state) => state.activeWindowId);
   const setActiveWindow = useWindowStore((state) => state.setActiveWindow);
 
+  const helpPopupVisible = usePopupStore((state) => state.helpPopupVisible);
+  const toggleHelpPopup = usePopupStore((state) => state.toggleHelpPopup);
+
   return (
     <div className="bg-ctp-mantle h-6 w-full px-2 justify-between flex ">
       <div className="flex gap-2">
@@ -34,6 +38,15 @@ function BottomBar() {
         ))}
       </div>
       <div className="flex gap-2">
+        <WindowButton
+          id={"?"}
+          name="help"
+          isActive={helpPopupVisible}
+          onClick={() => {
+            toggleHelpPopup();
+            console.log("yo");
+          }}
+        />
         <h1>"guest"</h1>
         {currentTime}
       </div>
