@@ -42,10 +42,7 @@ function BottomBar() {
           id={"?"}
           name="help"
           isActive={helpPopupVisible}
-          onClick={() => {
-            toggleHelpPopup();
-            console.log("yo");
-          }}
+          onClick={toggleHelpPopup}
         />
         <h1>"guest"</h1>
         {currentTime}
