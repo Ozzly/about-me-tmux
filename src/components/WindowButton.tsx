@@ -1,25 +1,23 @@
-import useWindowStore from "../stores/windowStore";
-
 interface WindowButtonProps {
-  number: number;
+  id: number | "?";
   name: string;
+  isActive: boolean;
+  onClick: () => void;
 }
 
-function WindowButton({ number, name }: WindowButtonProps) {
-  const setActiveWindow = useWindowStore((state) => state.setActiveWindow);
-  const activeWindowId = useWindowStore((state) => state.activeWindowId);
-  const isActive = activeWindowId === number;
+function WindowButton({ id, name, isActive, onClick }: WindowButtonProps) {
   return (
-    <div
-      className="flex hover:brightness-120 transition-all duration-200"
-      onClick={() => setActiveWindow(number)}
+    <button
+      className="flex hover:brightness-120 transition-all duration-200 cursor-pointer"
+      onClick={onClick}
+      type="button"
     >
       <div
         className={`w-fit px-3 text-center text-ctp-base rounded-l-md ${
           isActive ? "bg-ctp-mauve" : "bg-ctp-overlay1"
         }`}
       >
-        {number}
+        {id}
       </div>
       <div
         className={` w-fit px-3 text-center rounded-r-md text-nowrap ${
@@ -28,7 +26,7 @@ function WindowButton({ number, name }: WindowButtonProps) {
       >
         {name}
       </div>
-    </div>
+    </button>
   );
 }
 

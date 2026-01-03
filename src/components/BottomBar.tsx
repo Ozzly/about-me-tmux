@@ -17,11 +17,20 @@ function BottomBar() {
     return () => clearInterval(interval);
   }, []);
 
+  const activeWindowId = useWindowStore((state) => state.activeWindowId);
+  const setActiveWindow = useWindowStore((state) => state.setActiveWindow);
+
   return (
     <div className="bg-ctp-mantle h-6 w-full px-2 justify-between flex ">
       <div className="flex gap-2">
         {windows.map((window) => (
-          <WindowButton number={window.id} name={window.name} key={window.id} />
+          <WindowButton
+            id={window.id}
+            name={window.name}
+            key={window.id}
+            isActive={window.id === activeWindowId}
+            onClick={() => setActiveWindow(window.id)}
+          />
         ))}
       </div>
       <div className="flex gap-2">
