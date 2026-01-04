@@ -1,3 +1,7 @@
+import dayjs from "dayjs";
+import About from "../components/About";
+import DirectoryContent from "../components/DirectoryContent";
+
 export interface FileSystemItem {
   name: string;
   type: "file" | "directory";
@@ -77,3 +81,64 @@ export const fileSystem: Record<string, FileSystemItem> = {
     },
   },
 };
+
+export const initCommandHistoryWindow1 = [
+  {
+    command: "about",
+    timeStamp: dayjs().format("HH:mm"),
+    path: ["~"],
+    output: (
+      <>
+        <About />
+        <div className="text-ctp-overlay0">
+          Welcome to my terminal - Type `
+          <span className="text-ctp-subtext1">help</span>` for a list of
+          commands
+        </div>
+      </>
+    ),
+  },
+];
+
+export const initCommandHistoryWindow2 = [
+  {
+    command: "cd projects",
+    timeStamp: dayjs().format("HH:mm"),
+    path: ["~"],
+  },
+  {
+    command: "ls",
+    timeStamp: dayjs().format("HH:mm"),
+    path: ["~", "projects"],
+    output: (
+      <>
+        <DirectoryContent contents={listDirectoryContents(["~", "projects"])} />
+        <div className="text-ctp-overlay0">
+          Try displaying the contents of a file with `
+          <span className="text-ctp-subtext1 inline-block">cat [filename]</span>
+          `, e.g. `
+          <span className="text-ctp-subtext1 inline-block">
+            cat reckord.txt
+          </span>
+          `
+          <br />
+          You can visit the git repos by clicking underlined file names.
+        </div>
+      </>
+    ),
+  },
+];
+
+export function listDirectoryContents(path: string[]): FileSystemItem[] | null {
+  console.log("Listing contents of path:", path);
+  let current = fileSystem["~"];
+  for (let i = 1; i < path.length; i++) {
+    if (!current.contents) {
+      return null;
+    }
+    current = current.contents[path[i]];
+  }
+  console.log("Directory contents:", current.contents);
+  console.log(Object.values(current.contents || {}));
+  return Object.values(current.contents || {});
+}

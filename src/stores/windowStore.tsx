@@ -3,7 +3,12 @@ import { create } from "zustand";
 import type { JSX } from "react";
 import About from "../components/About";
 import HelpMessage from "../components/HelpMessage";
-import { fileSystem, type FileSystemItem } from "../assets/fileSystem";
+import {
+  fileSystem,
+  initCommandHistoryWindow1,
+  initCommandHistoryWindow2,
+  listDirectoryContents,
+} from "../assets/fileSystem";
 import DirectoryContent from "../components/DirectoryContent";
 
 interface Command {
@@ -35,60 +40,13 @@ const useWindowStore = create<WindowStore>((set, get) => ({
       id: 1,
       name: "about-me",
       path: ["~"],
-      commandHistory: [
-        {
-          command: "about",
-          timeStamp: dayjs().format("HH:mm"),
-          path: ["~"],
-          output: (
-            <>
-              <About />
-              <div className="text-ctp-overlay0">
-                Welcome to my terminal - Type `
-                <span className="text-ctp-subtext1">help</span>` for a list of
-                commands
-              </div>
-            </>
-          ),
-        },
-      ],
+      commandHistory: initCommandHistoryWindow1,
     },
     {
       id: 2,
       name: "projects",
       path: ["~", "projects"],
-      commandHistory: [
-        {
-          command: "cd projects",
-          timeStamp: dayjs().format("HH:mm"),
-          path: ["~"],
-        },
-        {
-          command: "ls",
-          timeStamp: dayjs().format("HH:mm"),
-          path: ["~", "projects"],
-          output: (
-            <>
-              <DirectoryContent
-                contents={listDirectoryContents(["~", "projects"])}
-              />
-              <div className="text-ctp-overlay0">
-                Try displaying the contents of a file with `
-                <span className="text-ctp-subtext1 inline-block">
-                  cat [filename]
-                </span>
-                `, e.g. `
-                <span className="text-ctp-subtext1 inline-block">
-                  cat reckord.txt
-                </span>
-                `
-                <br />
-                You can visit the git repos by clicking underlined file names.
-              </div>
-            </>
-          ),
-        },
-      ],
+      commandHistory: initCommandHistoryWindow2,
     },
   ],
   activeWindowId: 1,
@@ -206,20 +164,6 @@ const getCommandOutput = (command: string, path: string[]) => {
       return `Command not found: ${command}`;
   }
 };
-
-function listDirectoryContents(path: string[]): FileSystemItem[] | null {
-  console.log("Listing contents of path:", path);
-  let current = fileSystem["~"];
-  for (let i = 1; i < path.length; i++) {
-    if (!current.contents) {
-      return null;
-    }
-    current = current.contents[path[i]];
-  }
-  console.log("Directory contents:", current.contents);
-  console.log(Object.values(current.contents || {}));
-  return Object.values(current.contents || {});
-}
 
 function getFileContent(path: string[], filename: string): string | null {
   let current = fileSystem["~"];
