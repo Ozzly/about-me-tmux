@@ -19,11 +19,7 @@ function About() {
         <AboutItem title="CV" content="Available upon request" />
         <br />
         --- Contact ---
-        <AboutItem
-          title="Email"
-          content="oscar@ozzly.net"
-          link="mailto:oscar@ozzly.net"
-        />
+        <AboutItem title="Email" content="oscar [@] ozzly.net" link="" />
         <AboutItem
           title="LinkedIn"
           content="Oscar Dennett"
