@@ -165,7 +165,10 @@ const getCommandOutput = (command: string, path: string[]) => {
   }
 };
 
-function getFileContent(path: string[], filename: string): string | null {
+function getFileContent(
+  path: string[],
+  filename: string,
+): string | JSX.Element | null {
   let current = fileSystem["~"];
   for (let i = 1; i < path.length; i++) {
     if (!current.contents) {
