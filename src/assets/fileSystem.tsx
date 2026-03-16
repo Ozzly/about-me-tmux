@@ -69,7 +69,7 @@ export const fileSystem: Record<string, FileSystemItem> = {
               <File
                 name="Deadstart"
                 description="A simple & minimalistic start page for your browser, inspired by a terminal experience. It includes custom bang(command) support, bang suggestions, bang autocomplete & validation."
-                imageSrc="https://private-user-images.githubusercontent.com/148060724/559934200-a07e5a0c-3fa5-4236-8c91-fc6ebbbb6fad.gif?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NzM3MDA2NjMsIm5iZiI6MTc3MzcwMDM2MywicGF0aCI6Ii8xNDgwNjA3MjQvNTU5OTM0MjAwLWEwN2U1YTBjLTNmYTUtNDIzNi04YzkxLWZjNmViYmJiNmZhZC5naWY_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwMzE2JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDMxNlQyMjMyNDNaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1iNDNjODMzZDEwMjRkNDY4ZDI5MjE4MjUwZjkxNjBhYWU5MzFjZjNmMWIzNTJlN2Y2OWZlNDBkYmI3YWFhMWUzJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.DUYbqp7oq9ey4YbGrgsPpSl5117NPRR2ynfvWsYEQtw"
+                imageSrc="/deadstart-full-converted.gif"
                 repoLink="https://github.com/Ozzly/deadstart"
                 fileName="deadstart.md"
                 fileInfo="HTML, JavaScript"
