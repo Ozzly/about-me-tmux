@@ -177,8 +177,6 @@ export const initCommandHistoryWindow2 = [
             cat reckord.txt
           </span>
           `
-          <br />
-          You can visit the git repos by clicking underlined file names.
         </div>
       </>
     ),
