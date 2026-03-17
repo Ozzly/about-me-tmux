@@ -12,23 +12,6 @@ export interface FileSystemItem {
   link?: string;
 }
 
-const tmux_about = `tmux-about is an interactive terminal portfolio website that mimics the look and feel of a tmux session.
-It is built using React and TypeScript, styled using Tailwind CSS and themed after Catppuccin Mocha.
-I appreciate the terminal aesthetic, but I understand that navigating a website purely through commands can be unintuitive for some users.
-Therefore, I modelled the site after tmux to provide different "windows" that users can switch between using clickable buttons.
-These windows include predefined content, making it easier to explore my portfolio at a glance, while still retaining the terminal experience.`;
-
-const catmarks = `Catmarks is a lightweight bookmark manager that uses rofi as its interface.
-Bookmarks are organised in a hierarchical file structure, allowing users to create directories to categorise their bookmarks effectively.
-Bookmarks are stored in plain text files, making it easy to migrate data without relying on databases.
-It will automatically attempt to download thumbnails for supported websites, using the Internet Archive's Wayback Machine as a fallback to bypass restrictions.
-It's fully coded in bash, making it highly portable across different systems.`;
-
-const reckord = `Reckord is a client-side web app for tracking media consumption, inspired by services like GoodReads, iMDb, and AniList.
-It allows users to maintain a record of books, movies, shows, anime, and manga they have consumed or plan to.
-Data is stored locally in the browser, ensuring user privacy and eliminating the need for server-side storage.
-It is built using React and TypeScript, styled with Tailwind CSS, and uses Zustand for state management.`;
-
 const reading = `I enjoy reading mostly fiction books, particularly (high) fantasy and science fiction.
 Some of my favourite book series are The Stormlight Archive by Brandon Sanderson, The Red Rising Saga by Pierce Brown, and the Hierarchy series by James Islington.
 I'm currently finishing The Strength of the Few by James Islington, why can't Diago catch a break? 
@@ -51,7 +34,7 @@ export const fileSystem: Record<string, FileSystemItem> = {
             content: (
               <File
                 name="Reckord"
-                description={reckord}
+                description="Reckord is a client-side web app for tracking media consumption, inspired by services like GoodReads, iMDb, and AniList. It intends to be a complete solution for tracking all media with a focus on simplicity and user privacy."
                 imageSrc=""
                 fileName="reckord.md"
                 fileInfo="React, Typescript, TailwindCSS, Zustand"
@@ -74,7 +57,7 @@ export const fileSystem: Record<string, FileSystemItem> = {
             content: (
               <File
                 name="Catmarks"
-                description={catmarks}
+                description="A command line bookmark manager built in bash, using a hierarchical file structure to organise bookmarks into categories. Output is piped into Rofi for easy navigation. It automatically downloads thumbnails from supported websites, using the Internet Archive's Wayback Machine as a fallback to bypass restrictions."
                 imageSrc=""
                 fileName="catmarks.md"
                 fileInfo="Bash"
@@ -93,7 +76,7 @@ export const fileSystem: Record<string, FileSystemItem> = {
             content: (
               <File
                 name="Portfolio"
-                description={tmux_about}
+                description="My portfolio website, modelled after a tmux session. It includes multiple windows with predefined content to make navigation easier, while still retaining the terminal experience. It includes a basic shell implementation, supporting commands like `ls`, `cd`, and `cat` to navigate the site and view content."
                 imageSrc=""
                 fileName="tmux-about.md"
                 fileInfo="React, Typescript, TailwindCSS, Zustand"
