@@ -68,16 +68,47 @@ export const fileSystem: Record<string, FileSystemItem> = {
               />
             ),
           },
-          "catmarks.txt": {
+          "catmarks.md": {
             type: "file",
-            name: "catmarks.txt",
-            content: catmarks,
-            link: "https://github.com/ozzly/catmarks",
+            name: "catmarks.md",
+            content: (
+              <File
+                name="Catmarks"
+                description={catmarks}
+                imageSrc=""
+                fileName="catmarks.md"
+                fileInfo="Bash"
+                links={[
+                  {
+                    src: "https://github.com/Ozzly/catmarks",
+                    description: "View on GitHub",
+                  },
+                ]}
+              />
+            ),
           },
-          "tmux-about.txt": {
+          "tmux-about.md": {
             type: "file",
-            name: "tmux-about.txt",
-            content: tmux_about,
+            name: "tmux-about.md",
+            content: (
+              <File
+                name="Portfolio"
+                description={tmux_about}
+                imageSrc=""
+                fileName="tmux-about.md"
+                fileInfo="React, Typescript, TailwindCSS, Zustand"
+                links={[
+                  {
+                    src: "https://github.com/Ozzly/about-me-tmux",
+                    description: "View on GitHub",
+                  },
+                  {
+                    src: "https://ozzly.net",
+                    description: "Visit Website",
+                  },
+                ]}
+              />
+            ),
           },
           "deadstart.md": {
             type: "file",
