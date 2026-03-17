@@ -178,12 +178,11 @@ function getFileContent(
   }
   if (
     !current.contents ||
-    (!current.contents[filename] && !current.contents[filename + ".txt"])
+    (!current.contents[filename] && !current.contents[filename + ".md"])
   ) {
     return null;
   }
-  const file =
-    current.contents[filename] || current.contents[filename + ".txt"];
+  const file = current.contents[filename] || current.contents[filename + ".md"];
   if (file.type !== "file") {
     return `cat: ${filename}: Is a directory`;
   }
