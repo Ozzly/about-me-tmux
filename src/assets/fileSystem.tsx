@@ -70,10 +70,18 @@ export const fileSystem: Record<string, FileSystemItem> = {
                 name="Deadstart"
                 description="A simple & minimalistic start page for your browser, inspired by a terminal experience. It includes custom bang(command) support, bang suggestions, bang autocomplete & validation."
                 imageSrc="/deadstart-full-converted.gif"
-                repoLink="https://github.com/Ozzly/deadstart"
                 fileName="deadstart.md"
                 fileInfo="HTML, JavaScript"
-                demoLink="https://deadstart.ozzly.net"
+                links={[
+                  {
+                    src: "https://github.com/Ozzly/deadstart",
+                    description: "View on GitHub",
+                  },
+                  {
+                    src: "https://deadstart.ozzly.net",
+                    description: "View Live Demo",
+                  },
+                ]}
               />
             ),
           },

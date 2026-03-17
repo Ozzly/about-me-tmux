@@ -1,23 +1,26 @@
 import { HiOutlineExternalLink } from "react-icons/hi";
 
+type Links = {
+  src: string;
+  description: string;
+};
+
 interface FileProps {
   name: string;
   description: string;
   imageSrc: string;
-  repoLink: string;
   fileName: string;
   fileInfo: string;
-  demoLink?: string;
+  links: Links[];
 }
 
 function File({
   name,
   description,
   imageSrc,
-  repoLink,
   fileName,
   fileInfo,
-  demoLink,
+  links,
 }: FileProps) {
   return (
     <div className="my-2 border-b border-ctp-overlay1">
@@ -65,8 +68,11 @@ function File({
           6
         </div>
         <div className="flex gap-2">
-          <Link href={repoLink}>View on GitHub</Link>
-          {demoLink && <Link href={demoLink}>View Demo</Link>}
+          {links.map((link, index) => (
+            <Link href={link.src} key={index}>
+              {link.description}
+            </Link>
+          ))}
         </div>
       </div>
       <div className="grid grid-cols-[40px_1fr] border-y border-ctp-overlay1">
