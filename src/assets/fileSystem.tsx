@@ -73,6 +73,7 @@ export const fileSystem: Record<string, FileSystemItem> = {
                 repoLink="https://github.com/Ozzly/deadstart"
                 fileName="deadstart.md"
                 fileInfo="HTML, JavaScript"
+                demoLink="https://deadstart.ozzly.net"
               />
             ),
           },

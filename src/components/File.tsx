@@ -7,6 +7,7 @@ interface FileProps {
   repoLink: string;
   fileName: string;
   fileInfo: string;
+  demoLink?: string;
 }
 
 function File({
@@ -16,6 +17,7 @@ function File({
   repoLink,
   fileName,
   fileInfo,
+  demoLink,
 }: FileProps) {
   return (
     <div className="my-2 border-b border-ctp-overlay1">
@@ -62,15 +64,10 @@ function File({
         <div className="border-r border-ctp-overlay1 text-ctp-overlay0 text-right pr-2">
           6
         </div>
-        <a
-          href={repoLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mx-2 mb-2 underline text-ctp-rosewater hover:text-ctp-flamingo transition-colors duration-200 inline-flex items-center gap-1"
-        >
-          View on GitHub
-          <HiOutlineExternalLink />
-        </a>
+        <div className="flex gap-2">
+          <Link href={repoLink}>View on GitHub</Link>
+          {demoLink && <Link href={demoLink}>View Demo</Link>}
+        </div>
       </div>
       <div className="grid grid-cols-[40px_1fr] border-y border-ctp-overlay1">
         <div className="border-r border-ctp-overlay0 p-2"></div>
@@ -81,3 +78,17 @@ function File({
 }
 
 export default File;
+
+function Link({ href, children }: { href: string; children: React.ReactNode }) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="mx-2 mb-2 underline text-ctp-rosewater hover:text-ctp-flamingo transition-colors duration-200 inline-flex items-center gap-1 w-fit"
+    >
+      {children}
+      <HiOutlineExternalLink />
+    </a>
+  );
+}
