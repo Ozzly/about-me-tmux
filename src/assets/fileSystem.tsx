@@ -45,11 +45,28 @@ export const fileSystem: Record<string, FileSystemItem> = {
         type: "directory",
         name: "projects",
         contents: {
-          "reckord.txt": {
+          "reckord.md": {
             type: "file",
-            name: "reckord.txt",
-            content: reckord,
-            link: "https://github.com/ozzly/reckord",
+            name: "reckord.md",
+            content: (
+              <File
+                name="Reckord"
+                description={reckord}
+                imageSrc=""
+                fileName="reckord.md"
+                fileInfo="React, Typescript, TailwindCSS, Zustand"
+                links={[
+                  {
+                    src: "https://github.com/ozzly/reckord",
+                    description: "View on GitHub",
+                  },
+                  {
+                    src: "https://reckord.net",
+                    description: "Visit Website",
+                  },
+                ]}
+              />
+            ),
           },
           "catmarks.txt": {
             type: "file",
