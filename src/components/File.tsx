@@ -12,6 +12,7 @@ interface FileProps {
   fileName: string;
   fileInfo: string;
   links: Links[];
+  lastEdited: string;
 }
 
 function File({
@@ -21,14 +22,18 @@ function File({
   fileName,
   fileInfo,
   links,
+  lastEdited,
 }: FileProps) {
   return (
     <div className="my-2 border-b border-ctp-overlay1">
       {/* Filename */}
       <div className="grid grid-cols-[40px_1fr] border-y border-ctp-overlay1">
         <div className="border-r border-ctp-overlay0 p-2"></div>
-        <div className="p-2 text-ctp-blue">
-          File: <span className="font-bold">{fileName}</span>
+        <div className="flex justify-between w-full items-center">
+          <div className="p-2 text-ctp-blue inline text-nowrap">
+            File: <span className="font-bold">{fileName}</span>
+          </div>
+          <span className="text-ctp-subtext0">Last edited: {lastEdited} </span>
         </div>
       </div>
 

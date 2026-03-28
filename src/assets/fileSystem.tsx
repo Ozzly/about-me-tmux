@@ -34,13 +34,14 @@ export const fileSystem: Record<string, FileSystemItem> = {
             content: (
               <File
                 name="Reckord"
-                description="Reckord is a client-side web app for tracking media consumption, inspired by services like GoodReads, iMDb, and AniList. It intends to be a complete solution for tracking all media with a focus on simplicity and user privacy."
+                description="Reckord is a client-side web app for tracking media consumption, inspired by services like GoodReads, iMDb, and AniList. It intends to be a complete solution for tracking all media with a focus on simplicity and user privacy. I've recently started to port the project from React to Svelte."
                 imageSrc=""
                 fileName="reckord.md"
-                fileInfo="React, Typescript, TailwindCSS, Zustand"
+                fileInfo="React -> Svelte, ReactRouter -> SvelteKit, Typescript, TailwindCSS, Zustand -> X"
+                lastEdited="March 28th 2026"
                 links={[
                   {
-                    src: "https://github.com/ozzly/reckord",
+                    src: "https://github.com/ozzly/reckord-svelte",
                     description: "View on GitHub",
                   },
                   {
@@ -61,6 +62,7 @@ export const fileSystem: Record<string, FileSystemItem> = {
                 imageSrc=""
                 fileName="catmarks.md"
                 fileInfo="Bash"
+                lastEdited="November 8th 2025"
                 links={[
                   {
                     src: "https://github.com/Ozzly/catmarks",
@@ -80,6 +82,7 @@ export const fileSystem: Record<string, FileSystemItem> = {
                 imageSrc=""
                 fileName="tmux-about.md"
                 fileInfo="React, Typescript, TailwindCSS, Zustand"
+                lastEdited="March 28th 2026"
                 links={[
                   {
                     src: "https://github.com/Ozzly/about-me-tmux",
@@ -103,6 +106,7 @@ export const fileSystem: Record<string, FileSystemItem> = {
                 imageSrc="/deadstart-full-converted.gif"
                 fileName="deadstart.md"
                 fileInfo="HTML, JavaScript"
+                lastEdited="March 24th 2026"
                 links={[
                   {
                     src: "https://github.com/Ozzly/deadstart",
