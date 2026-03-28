@@ -120,6 +120,27 @@ export const fileSystem: Record<string, FileSystemItem> = {
               />
             ),
           },
+
+          "eink-watch.md": {
+            type: "file",
+            name: "eink-watch.md",
+            content: (
+              <File
+                name="DIY eink watch"
+                description="I'm attempting to build my own eink watch, currently using an ESP32 development board for controlling the components. This project is still in early days, and I'm currently experimenting on a spare LCD screen whilst waiting for the e-ink screen to arrive."
+                imageSrc="/early-screen-demo.gif"
+                fileName="eink-watch.md"
+                fileInfo="C++"
+                lastEdited="March 17th 2026"
+                links={[
+                  {
+                    src: "https://github.com/Ozzly/watch",
+                    description: "View on GitHub",
+                  },
+                ]}
+              />
+            ),
+          },
         },
       },
       interests: {
